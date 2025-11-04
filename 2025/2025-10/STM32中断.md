@@ -1,4 +1,4 @@
-# STM32中断函数
+# STM32 中断
 日期：2025-10-28
 
 标签：`中断` `STM32` `EXTI` `NVIC`
@@ -30,7 +30,7 @@ RCC_APB2PeriphClockCmd -> GPIO_Init -> GPIO_EXTILineConfig(配置具体管脚，
 
 使用：
 
-注：无需在.h里声明
+注：无需在.h里声明，main函数也不需要加入，直接执行就行
 ```c
 void EXTI15_10_IRQHandler(void){ // 具体函数名去中断向量表里找
     if(EXTI_GetITStatus(EXTI_Line14) != RESET){ // 事件
@@ -40,3 +40,24 @@ void EXTI15_10_IRQHandler(void){ // 具体函数名去中断向量表里找
     }
 }
 ```
+
+
+
+
+# 定时中断
+
+## 定时中断流程
+![定时中断](定时中断.png)
+
+### 过程
+1、打开RCC时钟
+
+2、选择时基单元的时钟源
+
+3、配置时基单元（预分频器、自动重装、计数模式等）
+
+4、配置中断输出控制
+
+5、配置NVIC
+
+6、运行控制（使能计数器）
