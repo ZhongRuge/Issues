@@ -41,7 +41,7 @@ REM 忽略模板文件，直接生成最小骨架
 >"%FULL_PATH%" echo # %INPUT_TITLE%
 >>"%FULL_PATH%" echo 日期：%YYYY%-%MM%-%DD%
 >>"%FULL_PATH%" echo.
->>"%FULL_PATH%" echo 标签：`example`
+>>"%FULL_PATH%" echo 标签：``
 >>"%FULL_PATH%" echo.
 >>"%FULL_PATH%" echo ## 现象分析
 >>"%FULL_PATH%" echo.
